@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="FileService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IFileService_CloseFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:CloseFile" />
+  </wsdl:message>
+  <wsdl:message name="IFileService_CloseFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CloseFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileService_OpenFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:OpenFile" />
+  </wsdl:message>
+  <wsdl:message name="IFileService_OpenFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OpenFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileService_WriteToFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:WriteToFile" />
+  </wsdl:message>
+  <wsdl:message name="IFileService_WriteToFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WriteToFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileService_ReadFromFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadFromFile" />
+  </wsdl:message>
+  <wsdl:message name="IFileService_ReadFromFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadFromFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFileService_ReadAllFromFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAllFromFile" />
+  </wsdl:message>
+  <wsdl:message name="IFileService_ReadAllFromFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAllFromFileResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IFileService">
+    <wsdl:operation name="CloseFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileService/CloseFile" message="tns:IFileService_CloseFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileService/CloseFileResponse" message="tns:IFileService_CloseFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OpenFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileService/OpenFile" message="tns:IFileService_OpenFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileService/OpenFileResponse" message="tns:IFileService_OpenFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteToFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileService/WriteToFile" message="tns:IFileService_WriteToFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileService/WriteToFileResponse" message="tns:IFileService_WriteToFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadFromFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileService/ReadFromFile" message="tns:IFileService_ReadFromFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileService/ReadFromFileResponse" message="tns:IFileService_ReadFromFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadAllFromFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFileService/ReadAllFromFile" message="tns:IFileService_ReadAllFromFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFileService/ReadAllFromFileResponse" message="tns:IFileService_ReadAllFromFile_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IFileService" type="tns:IFileService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CloseFile">
+      <soap:operation soapAction="http://tempuri.org/IFileService/CloseFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenFile">
+      <soap:operation soapAction="http://tempuri.org/IFileService/OpenFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteToFile">
+      <soap:operation soapAction="http://tempuri.org/IFileService/WriteToFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadFromFile">
+      <soap:operation soapAction="http://tempuri.org/IFileService/ReadFromFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadAllFromFile">
+      <soap:operation soapAction="http://tempuri.org/IFileService/ReadAllFromFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FileService">
+    <wsdl:port name="BasicHttpBinding_IFileService" binding="tns:BasicHttpBinding_IFileService">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/FileServiceLib/Service1/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
